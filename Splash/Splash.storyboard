@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8hh-OM-WUP">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SplashVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SplashVC" id="Y6W-OH-hqX" customClass="SplashVC" customModule="AmitBookDepot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AmitLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hCw-ZJ-wuW">
+                                <rect key="frame" x="121.66666666666669" y="385.66666666666669" width="150" height="150.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hCw-ZJ-wuW" secondAttribute="height" multiplier="1:1" id="r1y-oC-mTf"/>
+                                    <constraint firstAttribute="width" constant="150" id="uP0-Mr-45e"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="hCw-ZJ-wuW" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="ifl-OF-Oil"/>
+                            <constraint firstItem="hCw-ZJ-wuW" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="kZy-qf-z5T"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wb3-iI-OsO"/>
+                    <connections>
+                        <outlet property="imgLogo" destination="hCw-ZJ-wuW" id="AEm-pC-SYT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947.32824427480909" y="-17.605633802816904"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2K9-Ph-fMd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8hh-OM-WUP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lcf-qT-ekX">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="L2s-y6-nSs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XzP-nJ-Ck9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247" y="-18"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AmitLogo" width="150" height="150"/>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
