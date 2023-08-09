@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0423C75D2A836E2100D8A2E8 /* CollectionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423C75C2A836E2100D8A2E8 /* CollectionDetailVC.swift */; };
+		046D86B82A83786D0097A27D /* TableViewLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D86B72A83786D0097A27D /* TableViewLibraryVC.swift */; };
+		046D86BC2A837A8B0097A27D /* MyTableLibraryVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D86BA2A837A8B0097A27D /* MyTableLibraryVCCell.swift */; };
+		046D86BD2A837A8B0097A27D /* MyTableLibraryVCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046D86BB2A837A8B0097A27D /* MyTableLibraryVCCell.xib */; };
+		0491B21E2A8394BF00BC482E /* TableViewDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491B21D2A8394BF00BC482E /* TableViewDetailVC.swift */; };
+		0491B2212A83967200BC482E /* TableViewDetailVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491B21F2A83967200BC482E /* TableViewDetailVCCell.swift */; };
+		0491B2222A83967200BC482E /* TableViewDetailVCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0491B2202A83967200BC482E /* TableViewDetailVCCell.xib */; };
+		0491B2262A83987F00BC482E /* CollectionDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0491B2242A83987F00BC482E /* CollectionDetailCell.swift */; };
+		0491B2272A83987F00BC482E /* CollectionDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0491B2252A83987F00BC482E /* CollectionDetailCell.xib */; };
 		04B50A6F2A8255D30023D7A2 /* LibraryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B50A6D2A8255D30023D7A2 /* LibraryCollectionCell.swift */; };
 		04B50A702A8255D30023D7A2 /* LibraryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B50A6E2A8255D30023D7A2 /* LibraryCollectionCell.xib */; };
 		04B50A722A82685D0023D7A2 /* CollectionLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B50A712A82685D0023D7A2 /* CollectionLibraryVC.swift */; };
@@ -80,6 +89,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0423C75C2A836E2100D8A2E8 /* CollectionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailVC.swift; sourceTree = "<group>"; };
+		046D86B72A83786D0097A27D /* TableViewLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewLibraryVC.swift; sourceTree = "<group>"; };
+		046D86BA2A837A8B0097A27D /* MyTableLibraryVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableLibraryVCCell.swift; sourceTree = "<group>"; };
+		046D86BB2A837A8B0097A27D /* MyTableLibraryVCCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableLibraryVCCell.xib; sourceTree = "<group>"; };
+		0491B21D2A8394BF00BC482E /* TableViewDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDetailVC.swift; sourceTree = "<group>"; };
+		0491B21F2A83967200BC482E /* TableViewDetailVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDetailVCCell.swift; sourceTree = "<group>"; };
+		0491B2202A83967200BC482E /* TableViewDetailVCCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewDetailVCCell.xib; sourceTree = "<group>"; };
+		0491B2242A83987F00BC482E /* CollectionDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailCell.swift; sourceTree = "<group>"; };
+		0491B2252A83987F00BC482E /* CollectionDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionDetailCell.xib; sourceTree = "<group>"; };
 		04B50A6D2A8255D30023D7A2 /* LibraryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCollectionCell.swift; sourceTree = "<group>"; };
 		04B50A6E2A8255D30023D7A2 /* LibraryCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryCollectionCell.xib; sourceTree = "<group>"; };
 		04B50A712A82685D0023D7A2 /* CollectionLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionLibraryVC.swift; sourceTree = "<group>"; };
@@ -165,6 +183,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046D86B92A8379AD0097A27D /* TableViewLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				046D86B72A83786D0097A27D /* TableViewLibraryVC.swift */,
+				046D86BA2A837A8B0097A27D /* MyTableLibraryVCCell.swift */,
+				046D86BB2A837A8B0097A27D /* MyTableLibraryVCCell.xib */,
+			);
+			path = TableViewLibrary;
+			sourceTree = "<group>";
+		};
+		0491B2232A8397F400BC482E /* TableViewDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				0491B21D2A8394BF00BC482E /* TableViewDetailVC.swift */,
+				0491B21F2A83967200BC482E /* TableViewDetailVCCell.swift */,
+				0491B2202A83967200BC482E /* TableViewDetailVCCell.xib */,
+				0491B2252A83987F00BC482E /* CollectionDetailCell.xib */,
+				0491B2242A83987F00BC482E /* CollectionDetailCell.swift */,
+			);
+			path = TableViewDetailVC;
+			sourceTree = "<group>";
+		};
 		04B50A732A8268B30023D7A2 /* CollectionLibraryVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,11 +351,14 @@
 		78F6B7C12A7DFABE00569337 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				04B50A732A8268B30023D7A2 /* CollectionLibraryVC */,
 				78F6B7C92A7DFAFB00569337 /* LibraryVC.swift */,
 				78F6B7CB2A7DFB0600569337 /* Library.storyboard */,
+				0423C75C2A836E2100D8A2E8 /* CollectionDetailVC.swift */,
 				04B50A6D2A8255D30023D7A2 /* LibraryCollectionCell.swift */,
 				04B50A6E2A8255D30023D7A2 /* LibraryCollectionCell.xib */,
+				0491B2232A8397F400BC482E /* TableViewDetailVC */,
+				046D86B92A8379AD0097A27D /* TableViewLibrary */,
+				04B50A732A8268B30023D7A2 /* CollectionLibraryVC */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -463,6 +506,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0491B2222A83967200BC482E /* TableViewDetailVCCell.xib in Resources */,
 				78F6B7DC2A7DFC8400569337 /* TabBar.storyboard in Resources */,
 				78F6B7D42A7DFB3600569337 /* Cart.storyboard in Resources */,
 				78F6B7D62A7DFB3F00569337 /* Profile.storyboard in Resources */,
@@ -470,6 +514,8 @@
 				78CEF6E42A7D755D001D1727 /* Assets.xcassets in Resources */,
 				78F6B7C62A7DFADB00569337 /* Home.storyboard in Resources */,
 				78F6B7BD2A7DF89F00569337 /* Splash.storyboard in Resources */,
+				0491B2272A83987F00BC482E /* CollectionDetailCell.xib in Resources */,
+				046D86BD2A837A8B0097A27D /* MyTableLibraryVCCell.xib in Resources */,
 				04B50A772A8269010023D7A2 /* CollectionLibraryCell.xib in Resources */,
 				04B50A702A8255D30023D7A2 /* LibraryCollectionCell.xib in Resources */,
 				78F6B7CC2A7DFB0600569337 /* Library.storyboard in Resources */,
@@ -498,6 +544,7 @@
 				787350A32A7ECB1800320776 /* ForgotPasswordVC.swift in Sources */,
 				78FE5C522A7ED8F800667E56 /* OTPVC.swift in Sources */,
 				78FE5C562A7EDCEF00667E56 /* OTPViewModel.swift in Sources */,
+				0491B2262A83987F00BC482E /* CollectionDetailCell.swift in Sources */,
 				78CEF7082A7DEE2B001D1727 /* WebConstants.swift in Sources */,
 				787350952A7E1DB800320776 /* LoginVC.swift in Sources */,
 				78F6B7D82A7DFB4A00569337 /* ProfileVC.swift in Sources */,
@@ -514,10 +561,12 @@
 				78CEF7072A7DEE2B001D1727 /* ApiManager.swift in Sources */,
 				78CEF73C2A7DEF55001D1727 /* Reachability.swift in Sources */,
 				78CEF7372A7DEF55001D1727 /* FloatingLabelInput.swift in Sources */,
+				046D86BC2A837A8B0097A27D /* MyTableLibraryVCCell.swift in Sources */,
 				78CEF7392A7DEF55001D1727 /* MimeTypeSelection.swift in Sources */,
 				78CEF6DD2A7D755C001D1727 /* SceneDelegate.swift in Sources */,
 				78CEF7352A7DEF55001D1727 /* PHPhotoLibrary.swift in Sources */,
 				78FE5C502A7ED1DA00667E56 /* ForgotPasswordViewModel.swift in Sources */,
+				046D86B82A83786D0097A27D /* TableViewLibraryVC.swift in Sources */,
 				78CEF7462A7DF501001D1727 /* LoginSignUpVC.swift in Sources */,
 				7873509F2A7EBF8A00320776 /* SignUpModel.swift in Sources */,
 				78CEF7342A7DEF55001D1727 /* color.swift in Sources */,
@@ -527,15 +576,18 @@
 				787350992A7E2D5000320776 /* LoginViewModel.swift in Sources */,
 				78F6B7C82A7DFAE600569337 /* HomeVC.swift in Sources */,
 				78CEF73D2A7DEF55001D1727 /* GlobalConstants.swift in Sources */,
+				0423C75D2A836E2100D8A2E8 /* CollectionDetailVC.swift in Sources */,
 				04B50A6F2A8255D30023D7A2 /* LibraryCollectionCell.swift in Sources */,
 				7873509D2A7E320300320776 /* SignUpResponseModel.swift in Sources */,
 				78CEF7402A7DEF55001D1727 /* GlobalFunctions.swift in Sources */,
+				0491B2212A83967200BC482E /* TableViewDetailVCCell.swift in Sources */,
 				78CEF7312A7DEF55001D1727 /* UISegmentControl.swift in Sources */,
 				78F6B7DA2A7DFC7400569337 /* TabBarC.swift in Sources */,
 				78CEF7062A7DEE2B001D1727 /* ApiManager+Multipart.swift in Sources */,
 				787350A12A7EC08200320776 /* SignUpViewModel.swift in Sources */,
 				78CEF72E2A7DEF55001D1727 /* View.swift in Sources */,
 				78FE5C542A7EDCA600667E56 /* OTPModel.swift in Sources */,
+				0491B21E2A8394BF00BC482E /* TableViewDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

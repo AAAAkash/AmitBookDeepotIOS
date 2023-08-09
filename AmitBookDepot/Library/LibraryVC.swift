@@ -13,10 +13,10 @@ class LibraryVC: BaseVC {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgView: UIImageView!
     
-    var arrImage = ["facebook","facebook"]
-        var arrLbl = ["aaaaa","bbbbb"]
+        var arrImage = ["facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook"]
+        var arrLbl = ["Apllication Forms","College Books","Competetive Exams Books","Fiction","Free Products","Gift Items","Lab Coats","Magazine","Punjab Board Books","School Books","Stationery","Studt Material | Notes"]
         
-        var imageNames = ["google","google"]
+        var imageNames = ["google","google","facebook","facebook"]
     
     var imageViews = [UIImageView]()
     var currentPage: Int = 0
@@ -95,17 +95,27 @@ extension LibraryVC: UICollectionViewDataSource, UICollectionViewDelegate, UICol
         cell.cellImage.image = UIImage(named: arrImage[indexPath.item])
         cell.cellLbl.text = arrLbl[indexPath.item]
         cell.backView.layer.cornerRadius = 3
-        cell.backView.layer.shadowColor = UIColor.gray.cgColor
+        cell.backView.layer.shadowColor = UIColor.lightGray.cgColor
         cell.backView.layer.shadowRadius = 1.0
-        cell.backView.layer.shadowOpacity = 3.0
+        cell.backView.layer.shadowOpacity = 1.0
         cell.backView.layer.shadowOffset = CGSize(width: 1, height: 1)
         cell.backView.layer.masksToBounds = false
         return cell
+        
+        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth: CGFloat = 180
-        let cellHeight: CGFloat = 75
-        return CGSize(width: cellWidth, height: cellHeight)
+      
+        return CGSize(width: self.collectionView.frame.size.width / 2, height: 80)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 5 || indexPath.row == 6 || indexPath.row == 7 || indexPath.row == 11 {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "CollectionLibraryVC") as! CollectionLibraryVC
+            self.navigationController?.pushViewController(vc,animated: true)
+        } else {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "TableViewLibraryVC") as! TableViewLibraryVC
+            self.navigationController?.pushViewController(vc,animated: true)
+        }
     }
 }
 extension LibraryVC: UIScrollViewDelegate {

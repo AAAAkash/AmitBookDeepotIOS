@@ -12,10 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionLibraryCell" id="gTV-IL-0wX" customClass="CollectionLibraryCell" customModule="AmitBookDepot" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+            <rect key="frame" x="0.0" y="0.0" width="150" height="260"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+                <rect key="frame" x="0.0" y="0.0" width="150" height="260"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5u6-30-kjS">
@@ -26,25 +26,28 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7e-yv-U82">
-                        <rect key="frame" x="8" y="227" width="134" height="14.333333333333343"/>
+                        <rect key="frame" x="8" y="237.66666666666666" width="134" height="14.333333333333343"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0E-mT-wtn">
-                        <rect key="frame" x="8" y="155" width="134" height="14.333333333333343"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0E-mT-wtn">
+                        <rect key="frame" x="8" y="155" width="134" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="Abj-4c-CZu"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzJ-DB-zL4">
-                        <rect key="frame" x="8" y="175.33333333333334" width="134" height="18"/>
+                        <rect key="frame" x="8" y="186" width="134" height="18"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.83880943060000002" blue="0.84550350900000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsQ-iF-jOZ">
-                        <rect key="frame" x="8" y="207" width="88" height="15"/>
+                        <rect key="frame" x="8" y="217.66666666666666" width="88" height="15"/>
                         <color key="backgroundColor" systemColor="systemBrownColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="adO-VV-Cht"/>
@@ -52,7 +55,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 sold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln6-Ax-6us">
-                        <rect key="frame" x="99" y="207" width="43" height="15"/>
+                        <rect key="frame" x="99" y="217.66666666666666" width="43" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
@@ -79,7 +82,16 @@
                 <constraint firstItem="I0E-mT-wtn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="wKn-ia-DJc"/>
                 <constraint firstAttribute="trailing" secondItem="T7e-yv-U82" secondAttribute="trailing" constant="8" id="x3I-9X-gIj"/>
             </constraints>
-            <point key="canvasLocation" x="129.7709923664122" y="-11.267605633802818"/>
+            <size key="customSize" width="150" height="258"/>
+            <connections>
+                <outlet property="imgView" destination="5u6-30-kjS" id="xuY-yl-mkv"/>
+                <outlet property="lblDescription" destination="I0E-mT-wtn" id="D0O-HJ-VRo"/>
+                <outlet property="lblPrice" destination="ZzJ-DB-zL4" id="fFu-Pb-3ca"/>
+                <outlet property="lblReview" destination="T7e-yv-U82" id="2rh-k8-G1H"/>
+                <outlet property="lblSold" destination="Ln6-Ax-6us" id="g5J-2E-nYd"/>
+                <outlet property="starView" destination="OsQ-iF-jOZ" id="ScD-xW-BCx"/>
+            </connections>
+            <point key="canvasLocation" x="129.7709923664122" y="-8.4507042253521139"/>
         </collectionViewCell>
     </objects>
     <resources>
