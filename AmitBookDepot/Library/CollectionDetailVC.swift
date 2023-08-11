@@ -82,6 +82,8 @@ class CollectionDetailVC: UIViewController {
 
         btnBuyNow.layer.cornerRadius = 3
         btnMsgSeller.layer.cornerRadius = 3
+         
+       // btnHeart.roundCorners()
         
 //        scrollViewImage.isPagingEnabled = true
 //        scrollViewImage.showsHorizontalScrollIndicator = false
@@ -106,11 +108,15 @@ class CollectionDetailVC: UIViewController {
     @IBAction func btnDesciptionAction(_ sender: Any) {
         lblDescription.isHidden = false
         lblDescription.text = "No Description"
+        btnDescription.backgroundColor = .systemMint
+        btnVideo.backgroundColor = .systemBackground
     }
     
     @IBAction func btnVideoAction(_ sender: Any) {
         lblDescription.isHidden = false
         lblDescription.text = "No Video"
+        btnVideo.backgroundColor = .systemMint
+        btnDescription.backgroundColor = .systemBackground
     }
     
     

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableCell" rowHeight="52" id="KGk-i7-Jjw" customClass="SearchTableCell" customModule="AmitBookDepot" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgY-o4-l41">
+                        <rect key="frame" x="5" y="5" width="310" height="90"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA9-bT-tb7">
+                                <rect key="frame" x="8" y="8" width="294" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="OGj-IQ-bZn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Dr Atul Luthra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfn-EP-hSh">
+                                <rect key="frame" x="8" y="65" width="230" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="9NH-VS-2QY"/>
+                                    <constraint firstAttribute="height" constant="20" id="U0T-fc-VXQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs 1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csd-8M-D1V">
+                                <rect key="frame" x="244" y="65" width="58" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="b9d-NB-4oB"/>
+                                    <constraint firstAttribute="height" constant="20" id="raZ-Yw-l9y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JA9-bT-tb7" firstAttribute="top" secondItem="tgY-o4-l41" secondAttribute="top" constant="8" id="7LZ-FE-tgj"/>
+                            <constraint firstAttribute="trailing" secondItem="Csd-8M-D1V" secondAttribute="trailing" constant="8" id="GYa-GY-tXZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Csd-8M-D1V" secondAttribute="bottom" constant="5" id="RJW-Ok-jzN"/>
+                            <constraint firstItem="Kfn-EP-hSh" firstAttribute="leading" secondItem="tgY-o4-l41" secondAttribute="leading" constant="8" id="YO3-rA-vrd"/>
+                            <constraint firstAttribute="trailing" secondItem="JA9-bT-tb7" secondAttribute="trailing" constant="8" id="eg5-QW-0Lw"/>
+                            <constraint firstAttribute="bottom" secondItem="Kfn-EP-hSh" secondAttribute="bottom" constant="5" id="uBj-jg-l0I"/>
+                            <constraint firstItem="JA9-bT-tb7" firstAttribute="leading" secondItem="tgY-o4-l41" secondAttribute="leading" constant="8" id="ylq-y3-0Fh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="tgY-o4-l41" secondAttribute="bottom" constant="5" id="f5k-yl-E9W"/>
+                    <constraint firstAttribute="trailing" secondItem="tgY-o4-l41" secondAttribute="trailing" constant="5" id="kK4-af-DQU"/>
+                    <constraint firstItem="tgY-o4-l41" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="t8o-jB-aQa"/>
+                    <constraint firstItem="tgY-o4-l41" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="vOe-Cx-V4y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellView" destination="tgY-o4-l41" id="jtI-W9-Mck"/>
+                <outlet property="lblAuthorName" destination="Kfn-EP-hSh" id="zd3-wq-vTH"/>
+                <outlet property="lblDetail" destination="JA9-bT-tb7" id="RCh-Sg-JTq"/>
+                <outlet property="lblPrice" destination="Csd-8M-D1V" id="WRf-O9-tmh"/>
+            </connections>
+            <point key="canvasLocation" x="20" y="-13"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

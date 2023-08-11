@@ -12,14 +12,14 @@ class CollectionLibraryVC: UIViewController {
     
     @IBOutlet weak var myCollectionView: UICollectionView!
     
-    var arrimage = ["AmitLogo","AmitLogo","AmitLogo","AmitLogo"]
+    var arrimage = ["book","book","book","book"]
     var arrDiscription = ["fjhbfhjsabfjh","nsaddjkfhajkfjkadhgfjhkadg","afhyghfgfghagfsdag","bjshdkjfgsdajkgfvhjsadhbgfjsadg","asbfjhbghhjfghsdgfa"]
     var price = ["Rs 5,000.00","Rs 6,000.00","Rs 80,000.00","Rs 70,000.00","Rs 2,000,00.00"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-     
+        
         self.myCollectionView.register(UINib(nibName: "CollectionLibraryCell", bundle: nil), forCellWithReuseIdentifier: "CollectionLibraryCell")
         
         
@@ -42,7 +42,7 @@ extension CollectionLibraryVC: UICollectionViewDataSource, UICollectionViewDeleg
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: self.myCollectionView.frame.size.width / 2, height: 250)
+        return CGSize(width: self.myCollectionView.frame.size.width / 2 - 20, height: 280)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

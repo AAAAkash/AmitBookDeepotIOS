@@ -3,6 +3,17 @@
 import Foundation
 import UIKit
 
+extension UIView {
+    func setShadow() {
+        self.layer.shadowColor = UIColor.lightGray.cgColor
+        self.layer.shadowRadius = 1.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.masksToBounds = false
+    }
+}
+    
+
 //class CircularProgressView: UIView {
 //   var progressLyr = CAShapeLayer()
 //   var trackLyr = CAShapeLayer()

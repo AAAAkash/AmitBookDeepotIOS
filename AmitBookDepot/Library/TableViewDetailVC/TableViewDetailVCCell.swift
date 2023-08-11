@@ -10,7 +10,7 @@ import UIKit
 class TableViewDetailVCCell: UITableViewCell {
     
     @IBOutlet weak var myCollectionView: UICollectionView!
-    var arrImage = ["AmitLogo","AmitLogo","AmitLogo","AmitLogo"]
+    var arrImage = ["book","book","book","book"]
     
     override func awakeFromNib() {
         super.awakeFromNib()

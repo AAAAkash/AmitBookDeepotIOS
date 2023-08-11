@@ -10,8 +10,7 @@ import UIKit
 class TableViewDetailVC: UIViewController {
     
     @IBOutlet weak var lblHeader: UILabel!
-    @IBOutlet weak var lblHeading: UILabel!
-    @IBOutlet weak var btnViewAll: UIButton!
+   
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -22,6 +21,8 @@ class TableViewDetailVC: UIViewController {
         //myTableView.estimatedRowHeight = 1.0
 
         myTableView.register(UINib(nibName: "TableViewDetailVCCell", bundle: nil), forCellReuseIdentifier: "TableViewDetailVCCell")
+        lblHeader.layer.cornerRadius = 5.0
+        
     }
     
     @IBAction func btnViewAllAction(_ sender: Any) {

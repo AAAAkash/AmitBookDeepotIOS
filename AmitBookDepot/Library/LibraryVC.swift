@@ -16,7 +16,7 @@ class LibraryVC: BaseVC {
         var arrImage = ["facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook"]
         var arrLbl = ["Apllication Forms","College Books","Competetive Exams Books","Fiction","Free Products","Gift Items","Lab Coats","Magazine","Punjab Board Books","School Books","Stationery","Studt Material | Notes"]
         
-        var imageNames = ["google","google","facebook","facebook"]
+        var imageNames = ["gettyimages","gettyimages","gettyimages","gettyimages"]
     
     var imageViews = [UIImageView]()
     var currentPage: Int = 0
@@ -95,11 +95,7 @@ extension LibraryVC: UICollectionViewDataSource, UICollectionViewDelegate, UICol
         cell.cellImage.image = UIImage(named: arrImage[indexPath.item])
         cell.cellLbl.text = arrLbl[indexPath.item]
         cell.backView.layer.cornerRadius = 3
-        cell.backView.layer.shadowColor = UIColor.lightGray.cgColor
-        cell.backView.layer.shadowRadius = 1.0
-        cell.backView.layer.shadowOpacity = 1.0
-        cell.backView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        cell.backView.layer.masksToBounds = false
+        cell.backView.setShadow()
         return cell
         
         
