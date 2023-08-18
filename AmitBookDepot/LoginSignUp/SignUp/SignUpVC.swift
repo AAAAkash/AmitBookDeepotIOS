@@ -34,6 +34,7 @@ class SignUpVC: BaseVC {
         txtFldMobile.placeholder = "Mobile Number"
         txtFldPassword.placeholder = "Password"
         txtFldConfirmPassword.placeholder = "Confirm Password"
+        txtFldMobile.delegate = self
         
         btnCreateAccount.layer.cornerRadius = 5.0
         btnCreateAccount.clipsToBounds = true
@@ -106,8 +107,8 @@ class SignUpVC: BaseVC {
                     print(param)
                     self?.view.endEditing(true)
                     viewModel.signUpUserApiCall(param) { model in
-                        if model?.statusCode == 200 {
-                            
+                        if model?.result == true {
+                            print("DONE.....")
                         } else {
                             if let errorMsg = model?.message {
                                 showMessage(with: errorMsg)
@@ -132,5 +133,24 @@ class SignUpVC: BaseVC {
     }
     
     @IBAction func actionSkip(_ sender: Any) {
+    }
+}
+
+
+extension SignUpVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if self.isMobile == true {
+            if textField == self.txtFldMobile {
+                if range.location == 0 && string == " "{
+                    return false
+                }
+                let maxLength = 10
+                let currentString: NSString = (textField.text ?? "") as NSString
+                let newString: NSString =
+                currentString.replacingCharacters(in: range, with: string) as NSString
+                return newString.length <= maxLength
+            }
+        }
+        return true
     }
 }

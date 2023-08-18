@@ -18,6 +18,7 @@ class OTPVC: BaseVC {
     @IBOutlet weak var txtSixth: UITextField!
     
     let viewModel: OTPViewModel = OTPViewModel()
+    var phone = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,20 @@ class OTPVC: BaseVC {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func actionResendOTP(_ sender: Any) {
+        self.view.endEditing(true)
+        let param = ["phone": self.phone]
+        viewModel.resendOTPApiCall(param) { model in
+            if model?.message?.contains("successfully") == true {
+                print("Resent OTP")
+            } else {
+                if let errorMsg = model?.message {
+                    showMessage(with: errorMsg)
+                }
+            }
+        }
+    }
+    
     @IBAction func actionContinue(_ sender: Any) {
         let txt1 = txtFirst.text?.trimmed ?? ""
         let txt2 = txtSecond.text?.trimmed ?? ""
@@ -49,7 +64,7 @@ class OTPVC: BaseVC {
         let txt6 = txtSixth.text?.trimmed ?? ""
         let otpStr = txt1+txt2+txt3+txt4+txt5+txt6
         
-        let oTPModel  = OTPModel(otp: otpStr)
+        let oTPModel  = OTPModel(otp: otpStr, phone: self.phone)
         viewModel.model = oTPModel
         viewModel.validateOTPModel() {[weak self] success, error  in
             guard let strongSelf = self else { return }
@@ -58,8 +73,8 @@ class OTPVC: BaseVC {
                     print(param)
                     self?.view.endEditing(true)
                     viewModel.verifyOTPApiCall(param) { model in
-                        if model?.statusCode == 200 {
-                            
+                        if model?.message?.contains("successfully") == true {
+                            print("OTP Verified")
                         } else {
                             if let errorMsg = model?.message {
                                 showMessage(with: errorMsg)

@@ -88,9 +88,9 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         //storyboard?.instantiateViewController(withIdentifier: "CollectionDetailVC") as! CollectionDetailVC
         self.navigationController?.pushViewController(vc,animated: true)
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 100
+//    }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string.isEmpty {
             isSearchActive = false

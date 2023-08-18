@@ -218,6 +218,10 @@
                                                             <size key="customSize" width="175" height="324"/>
                                                             <connections>
                                                                 <outlet property="imgBestSelling" destination="4T5-IV-cZU" id="yG5-FF-kEI"/>
+                                                                <outlet property="lblBestSellingCell" destination="jpG-Jw-292" id="JWR-Cg-oRK"/>
+                                                                <outlet property="lblDetail" destination="IXx-EA-R3N" id="x5n-9F-lO1"/>
+                                                                <outlet property="lblPrice" destination="wBz-8e-7Xt" id="Qbg-Hz-lVR"/>
+                                                                <outlet property="lblReview" destination="UjK-QW-cbi" id="Q8J-3j-g5a"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>

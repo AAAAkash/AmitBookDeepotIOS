@@ -8,9 +8,11 @@
 import Foundation
 class OTPModel {
     var otp: String = ""
+    var phone: String = ""
     init() {
     }
-    init(otp: String) {
+    init(otp: String, phone: String) {
         self.otp = otp
+        self.phone = phone
     }
 }

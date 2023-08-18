@@ -109,15 +109,34 @@ class LoginVC: BaseVC {
                 if let param = success {
                     print(param)
                     self?.view.endEditing(true)
-                    viewModel.loginUserApiCall(param) { model in
-                        if model?.statusCode == 200 {
-                            
-                        } else {
-                            if let errorMsg = model?.message {
-                                showMessage(with: errorMsg)
+                    if self?.isMobile == true {
+                        viewModel.sendOtpLoginApiCall(param) { model in
+                            if model?.message?.contains("successfully") == true {
+                                print("otp via phone")
+                                let destinationViewController = AppStoryBoards.loginSignUp.instantiateViewController(withIdentifier: "OTPVC") as? OTPVC
+                                destinationViewController?.phone = self?.txtFldMobile.text ?? ""
+                                self?.navigationController?.pushViewController(destinationViewController!, animated: true)
+                            } else {
+                                if let errorMsg = model?.message {
+                                    showMessage(with: errorMsg)
+                                }
+                            }
+                        }
+                    } else {
+                        viewModel.loginUserApiCall(param) { model in
+                            if model?.user?.id ?? 0 > 0 {
+                                UserDefaults.standard.removeObject(forKey: "AccessToken")
+                                UserDefaults.standard.set(model?.access_token, forKey: "AccessToken")
+                                UserDefaults.standard.synchronize()
+                                print("login via email")
+                            } else {
+                                if let errorMsg = model?.message {
+                                    showMessage(with: errorMsg)
+                                }
                             }
                         }
                     }
+                    
                 }
             } else {
                 showMessage(with: error ?? "Something went wrong")

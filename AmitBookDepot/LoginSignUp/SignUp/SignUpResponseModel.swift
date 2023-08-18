@@ -10,6 +10,7 @@ import Foundation
 struct SignupResponseModel: Codable {
     let message: String?
     let statusCode: Int?
+    let result: Bool?
     let access_token: String?
     let user: UserDetail?
     let token_type: String?
@@ -22,7 +23,7 @@ struct UserDetail: Codable {
     let city: String?
     let country: String?
     let email: String?
-    let id: String?
+    let id: Int?
     let name: String?
     let phone: String?
     let postal_code: String?

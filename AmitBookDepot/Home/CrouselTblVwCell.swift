@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CrouselTblVwCell: UITableViewCell {
 
@@ -13,6 +14,7 @@ class CrouselTblVwCell: UITableViewCell {
     
     let cellPercentWidth: CGFloat = 0.7
     var centeredCollectionViewFlowLayout: CenteredCollectionViewFlowLayout!
+    var featuredProductResponseDetails = [FeaturedProductResponseDetails]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,17 +42,25 @@ class CrouselTblVwCell: UITableViewCell {
         
 
     }
+    
+    func setDataOnCell(featuredProductsData: [FeaturedProductResponseDetails]) {
+        self.featuredProductResponseDetails.removeAll()
+        self.featuredProductResponseDetails = featuredProductsData
+        self.corouselCollectionView.reloadData()
+    }
 
 }
 extension CrouselTblVwCell: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return self.featuredProductResponseDetails.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CrouselCollVwCell", for: indexPath) as? CrouselCollVwCell else {
             return CrouselCollVwCell()
         }
+        cell.lblHistory.text = self.featuredProductResponseDetails[indexPath.row].name ?? ""
+        cell.CrouselCollImagView.sd_setImage(with: URL(string: "\(APIUrl.UserApis.baseURLImage)\(self.featuredProductResponseDetails[indexPath.row].featured_image ?? "")"))
         return cell
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

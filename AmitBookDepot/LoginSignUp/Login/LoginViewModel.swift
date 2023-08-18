@@ -32,7 +32,7 @@ class LoginViewModel {
         }
         if error == nil {
             if isMobile == true {
-                let param = ["mobile": model.email]
+                let param = ["phone": model.email]
                 completion(param, nil)
             } else {
                 let param = ["email": model.email, "password": model.password]
@@ -49,7 +49,19 @@ extension LoginViewModel {
         Progress.instance.show()
         ApiManager<SignupResponseModel>.makeApiCall(APIUrl.UserApis.login, params: params, headers: nil, method: .post) { (response, resultModel) in
             Progress.instance.hide()
-            if resultModel?.statusCode == 200 {
+            if resultModel?.user?.id ?? 0 > 0 {
+                result(resultModel)
+            } else {
+                showMessage(with: response?["message"] as? String ?? "")
+            }
+        }
+    }
+    
+    func sendOtpLoginApiCall(_ params: [String: Any], _ result:@escaping(SignupResponseModel?) -> Void) {
+        Progress.instance.show()
+        ApiManager<SignupResponseModel>.makeApiCall(APIUrl.UserApis.sendotplogin, params: params, headers: nil, method: .post) { (response, resultModel) in
+            Progress.instance.hide()
+            if resultModel?.message?.contains("successfully") == true {
                 result(resultModel)
             } else {
                 showMessage(with: response?["message"] as? String ?? "")

@@ -49,8 +49,8 @@ class ForgotPasswordVC: BaseVC {
                     print(param)
                     self?.view.endEditing(true)
                     viewModel.forgotPasswordApiCall(param) { model in
-                        if model?.statusCode == 200 {
-                            
+                        if model?.message?.contains("successfully") == true {
+                            print("Forgot password done")
                         } else {
                             if let errorMsg = model?.message {
                                 showMessage(with: errorMsg)

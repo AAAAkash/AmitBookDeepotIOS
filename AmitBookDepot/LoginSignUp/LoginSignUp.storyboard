@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -999,8 +998,18 @@
                                     <constraint firstItem="y0H-4m-jo3" firstAttribute="height" secondItem="bBR-5H-FAf" secondAttribute="height" id="sDU-eu-VLy"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMJ-lU-reZ">
+                                <rect key="frame" x="164.5" y="232" width="85" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Resend OTP">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionResendOTP:" destination="4X8-FB-bnc" eventType="touchUpInside" id="Gf6-wZ-pGc"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdd-Av-TOC">
-                                <rect key="frame" x="122" y="232" width="170" height="40"/>
+                                <rect key="frame" x="122" y="282" width="170" height="40"/>
                                 <color key="backgroundColor" systemColor="systemMintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="VaP-dW-x6F"/>
@@ -1022,9 +1031,11 @@
                             <constraint firstItem="19K-8W-cSo" firstAttribute="centerX" secondItem="Hoi-eA-tS6" secondAttribute="centerX" id="0s2-M0-a73"/>
                             <constraint firstItem="Hoi-eA-tS6" firstAttribute="trailing" secondItem="jTW-0q-JRF" secondAttribute="trailing" constant="20" id="2yv-hz-Dw2"/>
                             <constraint firstItem="jTW-0q-JRF" firstAttribute="leading" secondItem="Hoi-eA-tS6" secondAttribute="leading" constant="20" id="9d9-4K-f0e"/>
-                            <constraint firstItem="Wdd-Av-TOC" firstAttribute="top" secondItem="jTW-0q-JRF" secondAttribute="bottom" constant="20" id="AGn-TH-B8E"/>
+                            <constraint firstItem="CMJ-lU-reZ" firstAttribute="top" secondItem="jTW-0q-JRF" secondAttribute="bottom" constant="20" id="DQ8-3T-D5i"/>
+                            <constraint firstItem="CMJ-lU-reZ" firstAttribute="centerX" secondItem="jTW-0q-JRF" secondAttribute="centerX" id="Gvf-Fe-s3Y"/>
                             <constraint firstItem="Wdd-Av-TOC" firstAttribute="centerX" secondItem="jTW-0q-JRF" secondAttribute="centerX" id="Kd4-zN-FxN"/>
                             <constraint firstItem="19K-8W-cSo" firstAttribute="top" secondItem="Hoi-eA-tS6" secondAttribute="top" constant="5" id="mXR-L2-NZB"/>
+                            <constraint firstItem="Wdd-Av-TOC" firstAttribute="top" secondItem="CMJ-lU-reZ" secondAttribute="bottom" constant="20" id="nGf-Cc-6gL"/>
                             <constraint firstItem="jTW-0q-JRF" firstAttribute="top" secondItem="19K-8W-cSo" secondAttribute="bottom" constant="20" id="sQh-WC-loh"/>
                         </constraints>
                     </view>
@@ -1035,7 +1046,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Verify Your Email" image="back">
+                                <state key="normal" title="Verify Your Phone" image="back">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
@@ -1081,6 +1092,9 @@
         </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

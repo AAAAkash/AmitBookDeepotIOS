@@ -35,10 +35,25 @@ struct APIUrl {
         return host + "api/"
     }
     struct UserApis {
+        static let baseURLImage                     = host                 + "public/"
         private static let basePreFix               = baseUrl              + "v1/auth/"
+        private static let basePreFixTwo            = baseUrl              + "v1/"
         static let signUp                           = basePreFix           + "signup"
         static let login                            = basePreFix           + "login"
+        static let sendotplogin                     = basePreFix           + "sendotplogin"
         static let forgotPassword                   = basePreFix           + "reset_password_with_code"
-        static let verifyOTP                        = basePreFix           + "reset_password_with_code"
+        static let verifyOTP                        = basePreFix           + "verifyPhoneLogin"
+        static let resendotplogin                   = basePreFix           + "resendotplogin"
+        
+        static let settings                         = basePreFixTwo           + "settings"
+        static let categoriesFeatured               = basePreFixTwo           + "categories/featured"
+        static let sliders                          = basePreFixTwo           + "sliders"
+        static let productsTodaysDeal               = basePreFixTwo           + "products/todays-deal"
+        static let productsFeatured                 = basePreFixTwo           + "products/featured"
+        static let productsFlashDeal                = basePreFixTwo           + "products/flash-deal"
+        static let productsBestSeller               = basePreFixTwo           + "products/best-seller"
+        static let brandsTop                        = basePreFixTwo           + "brands/top"
+        static let categories                       = basePreFixTwo           + "categories"
+        
     }
 }

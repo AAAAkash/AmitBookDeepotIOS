@@ -72,7 +72,7 @@ extension SignUpViewModel {
         Progress.instance.show()
         ApiManager<SignupResponseModel>.makeApiCall(APIUrl.UserApis.signUp, params: params, headers: nil, method: .post) { (response, resultModel) in
             Progress.instance.hide()
-            if resultModel?.statusCode == 200 {
+            if resultModel?.result == true {
                 result(resultModel)
             } else {
                 showMessage(with: response?["message"] as? String ?? "")

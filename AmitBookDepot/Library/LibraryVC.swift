@@ -13,20 +13,21 @@ class LibraryVC: BaseVC {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgView: UIImageView!
     
-        var arrImage = ["facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook"]
-        var arrLbl = ["Apllication Forms","College Books","Competetive Exams Books","Fiction","Free Products","Gift Items","Lab Coats","Magazine","Punjab Board Books","School Books","Stationery","Studt Material | Notes"]
-        
-        var imageNames = ["gettyimages","gettyimages","gettyimages","gettyimages"]
+    let libraryViewModel: LibraryViewModel = LibraryViewModel()
+    var categoriesResponseDetails = [CategoriesResponseDetails]()
+    var arrImage = ["facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook","facebook"]
+    var arrLbl = ["Apllication Forms","College Books","Competetive Exams Books","Fiction","Free Products","Gift Items","Lab Coats","Magazine","Punjab Board Books","School Books","Stationery","Studt Material | Notes"]
+    
+    var imageNames = ["gettyimages","gettyimages","gettyimages","gettyimages"]
     
     var imageViews = [UIImageView]()
     var currentPage: Int = 0
-
+    
     var autoSwipeTimer: Timer?
     let autoSwipeInterval: TimeInterval = 3.0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.collectionView.register(UINib(nibName: "LibraryCollectionCell", bundle: nil), forCellWithReuseIdentifier: "LibraryCollectionCell")
         
         scrollView.isPagingEnabled = true
@@ -49,42 +50,52 @@ class LibraryVC: BaseVC {
         super.viewDidLayoutSubviews()
         
         let scrollViewWidth = scrollView.frame.width
-                let scrollViewHeight = scrollView.frame.height
-                
-                for (index, subview) in scrollView.subviews.enumerated() {
-                    if let imageView = subview as? UIImageView {
-                        imageView.frame = CGRect(x: CGFloat(index) * scrollViewWidth, y: 0, width: scrollViewWidth, height: scrollViewHeight)
-                    }
-                }
-                
-                scrollView.contentSize = CGSize(width: scrollViewWidth * CGFloat(imageNames.count), height: scrollViewHeight)
-            }
-            
-            override func viewDidAppear(_ animated: Bool) {
-                super.viewDidAppear(animated)
-                startAutoSwipeTimer()
-            }
-            
-            override func viewWillDisappear(_ animated: Bool) {
-                super.viewWillDisappear(animated)
-                stopAutoSwipeTimer()
-            }
-            
-            func startAutoSwipeTimer() {
-                autoSwipeTimer = Timer.scheduledTimer(timeInterval: autoSwipeInterval, target: self, selector: #selector(autoSwipeImages), userInfo: nil, repeats: true)
-            }
-            
-            func stopAutoSwipeTimer() {
-                autoSwipeTimer?.invalidate()
-                autoSwipeTimer = nil
-            }
-            
-            @objc func autoSwipeImages() {
-                currentPage = (currentPage + 1) % imageNames.count
-                let offsetX = CGFloat(currentPage) * scrollView.frame.size.width
-                scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+        let scrollViewHeight = scrollView.frame.height
+        
+        for (index, subview) in scrollView.subviews.enumerated() {
+            if let imageView = subview as? UIImageView {
+                imageView.frame = CGRect(x: CGFloat(index) * scrollViewWidth, y: 0, width: scrollViewWidth, height: scrollViewHeight)
             }
         }
+        
+        scrollView.contentSize = CGSize(width: scrollViewWidth * CGFloat(imageNames.count), height: scrollViewHeight)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startAutoSwipeTimer()
+        self.fetchCategoriesApi()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopAutoSwipeTimer()
+    }
+    
+    func fetchCategoriesApi() {
+        libraryViewModel.fetchCategoriesApi() { [weak self] (model) in
+            DispatchQueue.main.async {
+                print(model?.status)
+                self?.categoriesResponseDetails = model?.data ?? [CategoriesResponseDetails]()
+            }
+        }
+    }
+    
+    func startAutoSwipeTimer() {
+        autoSwipeTimer = Timer.scheduledTimer(timeInterval: autoSwipeInterval, target: self, selector: #selector(autoSwipeImages), userInfo: nil, repeats: true)
+    }
+    
+    func stopAutoSwipeTimer() {
+        autoSwipeTimer?.invalidate()
+        autoSwipeTimer = nil
+    }
+    
+    @objc func autoSwipeImages() {
+        currentPage = (currentPage + 1) % imageNames.count
+        let offsetX = CGFloat(currentPage) * scrollView.frame.size.width
+        scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+    }
+}
 extension LibraryVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -101,7 +112,7 @@ extension LibraryVC: UICollectionViewDataSource, UICollectionViewDelegate, UICol
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      
+        
         return CGSize(width: self.collectionView.frame.size.width / 2, height: 80)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -115,14 +126,14 @@ extension LibraryVC: UICollectionViewDataSource, UICollectionViewDelegate, UICol
     }
 }
 extension LibraryVC: UIScrollViewDelegate {
-func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    let currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
-    self.currentPage = currentPage
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+        self.currentPage = currentPage
+    }
 }
-}
-    
-    
 
-   
+
+
+
 
 

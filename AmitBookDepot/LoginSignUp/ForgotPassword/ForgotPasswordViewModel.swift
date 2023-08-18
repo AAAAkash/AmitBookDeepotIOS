@@ -30,7 +30,7 @@ extension ForgotPasswordViewModel {
         Progress.instance.show()
         ApiManager<SignupResponseModel>.makeApiCall(APIUrl.UserApis.forgotPassword, params: params, headers: nil, method: .post) { (response, resultModel) in
             Progress.instance.hide()
-            if resultModel?.statusCode == 200 {
+            if resultModel?.message?.contains("successfully") == true {
                 result(resultModel)
             } else {
                 showMessage(with: response?["message"] as? String ?? "")
